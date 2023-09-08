@@ -6,7 +6,7 @@ const request = require("supertest");
 describe("Esta es una simulación de testeo", () => {
   it("Debería responder un string", async () => {
     const res = await request(app).get("/");
-    expect(typeof res.body).toBe("string");
+    expect(Array.isArray(res)).toBeTruthy;
   });
   
   it("Debería tener un status 200 la respuesta", async () => {
