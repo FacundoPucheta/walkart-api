@@ -1,5 +1,5 @@
-const { welcomeService } = require("./welcomeService");
+const creationsService = require("./creationsService");
 
 module.exports = {
-  welcomeService,
+  creationsService,
 };
