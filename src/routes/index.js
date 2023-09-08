@@ -1,7 +1,8 @@
-const { welcomeController } = require("../controllers");
+const { creationsController } = require("../controllers");
+
 
 const router = require("express").Router();
 
-router.get("/", welcomeController.sayHello); // RUTA DE EJEMPLO !!!!!!!
+router.get("/", creationsController.getCreations); 
 
 module.exports = router;

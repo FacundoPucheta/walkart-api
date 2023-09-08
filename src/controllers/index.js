@@ -1,6 +1,6 @@
-const welcomeController = require("./welcomeController");
+const creationsController = require("./creationsController")
 
 module.exports = {
-    welcomeController,
+    creationsController,
     
-}
+};

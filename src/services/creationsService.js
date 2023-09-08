@@ -2,6 +2,8 @@
 // SERVICIO DE EJEMPLO!!!!!!!!
 // SERVICIO DE EJEMPLO!!!!!!!!
 
+const {ClientError}  = require("../utils/errors");
+
 const data = [
   {
     name: "Personalizada",
@@ -125,10 +127,11 @@ const data = [
   },
 ];
 
-const welcomeService = async () => {
+const creations = async () => {
+  if(data.length <= 0) throw new ClientError("No se encontro información respecto a las creaciones.", 404);
   return data;
 };
 
 module.exports = {
-  welcomeService,
+  creations,
 };
