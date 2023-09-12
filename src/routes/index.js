@@ -3,6 +3,6 @@ const { creationsController } = require("../controllers");
 
 const router = require("express").Router();
 
-router.get("/", creationsController.getCreations); 
+router.get("/creations", creationsController.getCreations); 
 
 module.exports = router;
