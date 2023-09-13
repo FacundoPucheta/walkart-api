@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const { Schema, model } = mongoose; // to be used on Schema Creation later
 
-const ownCreation = new Schema({
+const creationsSchema = new Schema({
   // create new Schema => Define new model?
   
     name: {
@@ -59,6 +59,6 @@ const ownCreation = new Schema({
   
 });
 
-const creations = model("CosasDePrueba", ownCreation); // Create new model.
+const creations = model("CosasDePrueba", creationsSchema); // Create new model.
 
 module.exports = creations;

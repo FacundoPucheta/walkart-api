@@ -7,7 +7,7 @@ const { creationsService } = require("../services");
 const { catchedAsync } = require("../utils");
 
 const getCreations = async (req, res) => {
-  const info = await creationsService.creations();
+  const info = await creationsService.ownCreations();
   response(res, 200, info);
 };
 
