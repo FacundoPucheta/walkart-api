@@ -1,7 +1,7 @@
 // SERVICIO DE EJEMPLO!!!!!!!!
 // SERVICIO DE EJEMPLO!!!!!!!!
 // SERVICIO DE EJEMPLO!!!!!!!!
-const Creations = require("../models/Creations");
+const creations = require("../models/creationModels");
 const { ClientError } = require("../utils/errors");
 
 const data = [
@@ -134,13 +134,13 @@ const data = [
   },
 ];
 
-const creations = async () => {
+const ownCreations = async () => {
   if (data.length <= 0)
     throw new ClientError(
       "No se encontro información respecto a las creaciones.",
       404
     );
-  const nuevaZapa = new Creations({
+  const nuevaZapa = new creations({
     name: "TrekPro",
     image: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-9.jpg",
     description: "TrekPro: listas para conquistar cualquier sendero.",
@@ -156,5 +156,5 @@ const creations = async () => {
 };
 
 module.exports = {
-  creations,
+  ownCreations,
 };
