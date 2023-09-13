@@ -1,6 +1,6 @@
 //Manejador de respuestas success.
-const response = (res, statusCode, data) => {
-  res.status(statusCode).json({
+const response = (res, status, data) => {
+  res.status(status).json({
     error: false,
     data,
   });

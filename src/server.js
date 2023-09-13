@@ -20,13 +20,12 @@ server.use((req, res, next) => {
   next();
 });
 
-
 server.use(router);
 
 //al tener 4 parametros, express identifica que es el manejador de errores
 server.use((err, req, res, next) => {
-  const { statusCode, message } = err;
-  resError(res, statusCode, message);
+  const { status, message } = err;
+  resError(res, status, message);
 });
 
 module.exports = server;

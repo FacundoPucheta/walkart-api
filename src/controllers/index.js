@@ -1,6 +1,5 @@
-const creationsController = require("./creationsController")
+const { getCreations } = require("./creationsController");
 
 module.exports = {
-    creationsController,
-    
+  getCreations,
 };
