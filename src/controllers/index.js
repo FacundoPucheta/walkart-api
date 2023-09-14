@@ -1,5 +1,5 @@
-const { getCreations } = require("./creationsController");
+const creationsController = require("./creationsController");
 
 module.exports = {
-  getCreations,
+  creationsController,
 };
