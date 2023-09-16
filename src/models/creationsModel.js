@@ -34,6 +34,6 @@ const creationsSchema = new Schema({
   
 });
 
-const creations = model("creaciones", creationsSchema); // Create new model.
+const Creations = model("creaciones", creationsSchema); // Create new model.
 
-module.exports = creations;
+module.exports = Creations;

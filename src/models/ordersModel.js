@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const { Schema, model } = mongoose;
 
-const clientModel = new Schema({
+const ordersSchema = new Schema({
   name: {
     type: String,
     required: false,
@@ -42,12 +42,13 @@ const clientModel = new Schema({
   },
   state: {
     type: String,
+    enum: ["Realizado","Enviado","Pendiente"],
     required: true,
     default: "Pendiente",
   },
 });
 
 
-const clients = model("clients", clientModel);
+const NewOrder = model("ordersmodel", ordersSchema);
 
-module.exports = clients;
+module.exports = NewOrder;
