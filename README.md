@@ -1,9 +1,11 @@
-### _Documento para describir:_
+## _Para levantar el proyecto:_
 
-#### Maneras de levantar el proyecto 
-_Levanatar el proyecto, manera de usar los test (npm test)_
+### Ejecutar el comando "npm start".
+_Se debe crear un archivo de ambiente(.env) en donde se debe especificar el nombre de la base de datos y su contraseña_
 
-#### Imagenes descriptivas.
-#### Finalidad del proyecto.
-#### Anuncios y redes.
-#### Agradecimientos.
+### Pendiente:
+
+#### Sección de middlewares -> validaciónes.
+#### Testing: routes y servicios/controllers.
+#### Revisión de modelos.
+#### Seguridad.
