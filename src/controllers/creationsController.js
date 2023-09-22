@@ -1,5 +1,4 @@
-const { response } = require("../utils/");
-const { catchedAsync } = require("../utils");
+const { response, catchedAsync } = require("../utils/");
 const { creationsService } = require("../services");
 
 const getCreations = async (req, res) => {
@@ -7,12 +6,13 @@ const getCreations = async (req, res) => {
   response(res, 200, info);
 };
 
-// const newOrder = async (req, res) => {
-//   const orderInfo = req.body;
-//   const order =
-//   response();
-// };
+const newCreation = async (req, res) => {
+  const data = req.body;
+  await creationsService.postCreation(data);
+  response(res, 200, "Nuevo modelo creado");
+};
 
 module.exports = {
   getCreations: catchedAsync(getCreations),
+  newCreation: catchedAsync(newCreation),
 };

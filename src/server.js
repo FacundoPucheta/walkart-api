@@ -1,12 +1,17 @@
 const express = require("express");
+const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
-const router = require("./routes/index");
+const router = require("./routes");
 const { resError } = require("./utils");
 
 const server = express();
 
+server.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
+server.use(bodyParser.json({ limit: "50mb" }));
+server.use(cookieParser());
 server.use(morgan("dev"));
-server.use(express.json());
+
 
 //modularizar el cors (fijarte fisio)
 server.use((req, res, next) => {

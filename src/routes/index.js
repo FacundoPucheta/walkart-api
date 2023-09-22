@@ -1,9 +1,10 @@
 const { creationsController } = require("../controllers");
 const router = require("express").Router();
 
+
 //creations | modelos
 router.get("/creations", creationsController.getCreations);
-// router.post("/creations", );
+router.post("/creations", creationsController.newCreation);
 // router.put("/creations", );
 // router.delete("/creations", );
 
