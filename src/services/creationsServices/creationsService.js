@@ -73,13 +73,14 @@ const { ClientError } = require("../../utils/errors");
 // ];
 
 const getCreations = async () => {
-  if (hardCodedData.length <= 0)
+  const allCreations = Creations.find({});
+
+  if (allCreations.length <= 0)
     throw new ClientError(
       "No se encontro información respecto a las creaciones.",
       404
     );
 
-  const allCreations = Creations.find({});
   return allCreations;
 };
 
