@@ -11,10 +11,9 @@ const mongoURI = `mongodb+srv://Piruetricks:${PASSWORD}@cluster0.eixyc75.mongodb
 mongoose
   .connect(mongoURI) // first, we connect to the DB
   .then(() => {
-    console.log("Connected to MongoDB"); // it work
+    console.log("Connected to MongoDB"); // if it work
     server.listen(PORT, () => {
-      // then we connect the server
-      console.log(`Server UP - Listen on ${DEFAULT_PORT}`); // it work
+      console.log(`Server UP - Listen on ${DEFAULT_PORT}`); //  if it work
     });
   })
-  .catch((error) => console.log(error.message)); // it doesn't work
+  .catch((error) => console.log(error.message)); // if it doesn't work
