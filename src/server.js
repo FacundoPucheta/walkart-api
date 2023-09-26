@@ -6,6 +6,7 @@ const { resError } = require("./utils");
 const server = express();
 
 server.use(express.json());
+server.use(express.urlencoded({ extended: false }));
 server.use(morgan("dev"));
 
 //modularizar el cors (fijarte fisio)

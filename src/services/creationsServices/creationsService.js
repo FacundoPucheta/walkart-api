@@ -74,7 +74,6 @@ const { ClientError } = require("../../utils/errors");
 
 const getCreations = async () => {
   const allCreations = Creations.find({});
-
   if (allCreations.length <= 0)
     throw new ClientError(
       "No se encontro información respecto a las creaciones.",
@@ -82,6 +81,31 @@ const getCreations = async () => {
     );
 
   return allCreations;
+};
+
+const changeCreations = async (id, data) => {
+  const product = await Creations.findByIdAndUpdate(id, data);
+  if (!product)
+    throw new ClientError(
+      `No se encontró la creación con el ID solicitado (id:${id})`
+    );
+};
+
+const getCreationsById = async (id) => {
+  const product = await Creations.findById(id);
+  if (!product)
+    throw new ClientError(
+      `No se encontró la creación con el ID solicitado (id:${id})`
+    );
+  return product;
+};
+
+const deleteCreation = async (id) => {
+  const product = await Creations.findByIdAndDelete(id);
+  if (!product)
+    throw new ClientError(
+      `No se encontró la creación con el ID solicitado (id:${id})`
+    );
 };
 
 const postCreation = async (data) => {
@@ -99,4 +123,7 @@ const postCreation = async (data) => {
 module.exports = {
   postCreation,
   getCreations,
+  changeCreations,
+  getCreationsById,
+  deleteCreation,
 };
